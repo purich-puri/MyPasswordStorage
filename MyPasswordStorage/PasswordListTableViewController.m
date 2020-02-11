@@ -7,6 +7,7 @@
 //
 
 #import "PasswordListTableViewController.h"
+#import "PasswordViewController.h"
 
 @interface PasswordListTableViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -52,8 +56,8 @@
     NSManagedObject *data = [_passwordList objectAtIndex:indexPath.row];
     [[cell textLabel] setText:[data valueForKeyPath:@"title"]];
     [[cell detailTextLabel] setText:[data valueForKey:@"username"]];
-    
-//    if(NO){
+#warning  TODO: RECOLOR BG WHEN PASSWORD IS OUTDATED
+//    if(){
 //        [cell setBackgroundColor:[UIColor redColor]];
 //    }
     
@@ -73,6 +77,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        
         NSManagedObjectContext *context = [[[[UIApplication sharedApplication] delegate] performSelector:@selector(persistentContainer)] viewContext];
         
         //DELETE FROM CORE DATA
@@ -89,6 +94,25 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+#warning    NAME THE SEGUE IDENTIFIER IN STORYBOARD AS WELL OR ELSE IT WILL NOT WORK!!!
+    if([segue.identifier isEqual: @"PasswordViewController"]){
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        PasswordViewController *vc = [segue destinationViewController];
+        
+        NSManagedObject *data = [_passwordList objectAtIndex:path.row];
+        NSString *dataString = [NSString stringWithFormat:@"%@", [data valueForKey:@"title"]];
+        //NSLog(@"%@", dataString);
+        [vc.titleLabel setTitle:dataString];
+
+        
+    }else {
+        //perform other segue like normal
+    }
+    
+
 }
 
 
@@ -115,5 +139,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end

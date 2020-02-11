@@ -13,6 +13,9 @@
 		5477B38423EC43AD005353CA /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5477B38323EC43AD005353CA /* SettingViewController.m */; };
 		5477B38723EC44A8005353CA /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5477B38623EC44A8005353CA /* AddViewController.m */; };
 		5477B38A23EC44E1005353CA /* PasswordListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5477B38923EC44E1005353CA /* PasswordListTableViewController.m */; };
+		5477B3CE23F01402005353CA /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5477B3CD23F01402005353CA /* PasswordViewController.m */; };
+		5477B3D123F02499005353CA /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5477B3D023F02499005353CA /* ProfileViewController.m */; };
+		5477B3D423F1938B005353CA /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5477B3D323F1938B005353CA /* UpdateViewController.m */; };
 		5482D17C23C3E17A0029B8A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5482D17B23C3E17A0029B8A3 /* AppDelegate.m */; };
 		5482D17F23C3E17A0029B8A3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5482D17E23C3E17A0029B8A3 /* SceneDelegate.m */; };
 		5482D18523C3E17A0029B8A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5482D18323C3E17A0029B8A3 /* Main.storyboard */; };
@@ -52,6 +55,12 @@
 		5477B38623EC44A8005353CA /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		5477B38823EC44E1005353CA /* PasswordListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordListTableViewController.h; sourceTree = "<group>"; };
 		5477B38923EC44E1005353CA /* PasswordListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordListTableViewController.m; sourceTree = "<group>"; };
+		5477B3CC23F01402005353CA /* PasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		5477B3CD23F01402005353CA /* PasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		5477B3CF23F02499005353CA /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		5477B3D023F02499005353CA /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5477B3D223F1938B005353CA /* UpdateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
+		5477B3D323F1938B005353CA /* UpdateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
 		5482D17723C3E17A0029B8A3 /* MyPasswordStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPasswordStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5482D17A23C3E17A0029B8A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5482D17B23C3E17A0029B8A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -138,6 +147,12 @@
 				5477B38623EC44A8005353CA /* AddViewController.m */,
 				5477B38823EC44E1005353CA /* PasswordListTableViewController.h */,
 				5477B38923EC44E1005353CA /* PasswordListTableViewController.m */,
+				5477B3CC23F01402005353CA /* PasswordViewController.h */,
+				5477B3CD23F01402005353CA /* PasswordViewController.m */,
+				5477B3CF23F02499005353CA /* ProfileViewController.h */,
+				5477B3D023F02499005353CA /* ProfileViewController.m */,
+				5477B3D223F1938B005353CA /* UpdateViewController.h */,
+				5477B3D323F1938B005353CA /* UpdateViewController.m */,
 			);
 			path = MyPasswordStorage;
 			sourceTree = "<group>";
@@ -298,7 +313,10 @@
 				5482D18D23C3E17B0029B8A3 /* main.m in Sources */,
 				5477B2F023D21147005353CA /* MyPassStorage.xcdatamodeld in Sources */,
 				5477B38723EC44A8005353CA /* AddViewController.m in Sources */,
+				5477B3D123F02499005353CA /* ProfileViewController.m in Sources */,
 				5482D17F23C3E17A0029B8A3 /* SceneDelegate.m in Sources */,
+				5477B3CE23F01402005353CA /* PasswordViewController.m in Sources */,
+				5477B3D423F1938B005353CA /* UpdateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RegisterViewController : UIViewController {}
+@interface RegisterViewController : UIViewController <UITextFieldDelegate>{}
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextbox;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextbox;

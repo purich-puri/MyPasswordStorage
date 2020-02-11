@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _usernameTextbox.delegate = self;
+    _passwordTextbox.delegate = self;
+    _passwordConfirmTextbox.delegate = self;
+    
     self.usernameTextbox.layer.cornerRadius=5.0f;
     self.usernameTextbox.layer.borderWidth=1.0f;
     self.usernameTextbox.layer.borderColor=[[UIColor lightGrayColor] CGColor];
@@ -40,6 +44,11 @@
 }
 */
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (IBAction)Register:(id)sender {
     if([_passwordTextbox.text isEqualToString: _passwordConfirmTextbox.text] && _usernameTextbox.hasText){
         NSManagedObjectContext *context = [[[[UIApplication sharedApplication] delegate] performSelector:@selector(persistentContainer)] viewContext];
@@ -58,6 +67,11 @@
         
         //unwind with an ID manually
         //[self performSegueWithIdentifier:@"UnwindToLoginID" sender:self];
+        NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        [settings setBool:YES forKey:@"upperCase"];
+        NSUserDefaults *credentials = [NSUserDefaults standardUserDefaults];
+        [credentials setObject:_usernameTextbox.text forKey:@"loginAs"];
+        [credentials synchronize];
         [self performSegueWithIdentifier:@"RegisteredID" sender:self];
     }
     else if (!_usernameTextbox.hasText){

@@ -114,13 +114,18 @@
     
     _userAccount = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    NSLog(@">: %@", _userAccount);
     if(_userAccount.count == 1){
         NSLog(@"Logged in");
+        NSUserDefaults *credentials = [NSUserDefaults standardUserDefaults];
+        [credentials setObject:_usernameTextbox.text forKey:@"loginAs"];
+        [credentials synchronize];
+        
         [self performSegueWithIdentifier:@"LoginID" sender:self];
     }
     else{
         NSLog(@"Wrong password");
+        self.passwordTextbox.layer.borderWidth = 1.0;
+        self.passwordTextbox.layer.borderColor = [[UIColor redColor] CGColor];
     }
 }
 

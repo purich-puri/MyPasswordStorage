@@ -11,9 +11,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PasswordListTableViewController : UITableViewController{
+@interface PasswordListTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>{
     NSMutableArray *_passwordList;
 }
+
 
 
 @end
